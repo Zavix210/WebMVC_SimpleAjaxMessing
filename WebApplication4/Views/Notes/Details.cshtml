@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<NoteViewModel>;
+<table>
+    <thead>
+        <tr>
+            <th>First</th>
+            <th>Second</th>
+            <th>Thrid</th>
+
+            <th>Fourth</th>
+            <th>Fifth</th>
+            <th>Sixth</th>
+
+            <th>Seventh</th>
+            <th>Eight</th>
+            <th>Ninth</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+         {
+            <tr>
+                <td>@product.first</td>
+                <td>@product.second</td>
+                <td>@product.third</td>
+
+                <td>@product.fourth</td>
+                <td>@product.first</td>
+                <td>@product.sixth</td>
+
+                <td>@product.seventh</td>
+                <td>@product.eigth</td>
+                <td>@product.nineth</td>
+            </tr>
+         }
+    </tbody>
+</table>  

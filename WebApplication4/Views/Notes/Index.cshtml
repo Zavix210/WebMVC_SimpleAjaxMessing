@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Note";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript" src="~/js/ajax-unobtrusive.js"></script>
+<script type="text/javascript" src="~/lib/jquery/dist/jquery.js"></script>
+
+<h2>Note</h2>
+
+
+<button id="details">Hello</button>
+<table>
+    <thead>
+        <tr>
+            <th>First</th>
+            <th>Second</th>
+            <th>Thrid</th>
+
+            <th>Fourth</th>
+            <th>Fifth</th>
+            <th>Sixth</th>
+
+            <th>Seventh</th>
+            <th>Eight</th>
+            <th>Ninth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td id="identiefer">0</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div id="dvCategoryResults">
+
+</div>
+
+<script type="text/javascript">
+    $('#details').click(function (e) {
+        var identiefer = $('#identiefer').text;
+        $.ajax({
+            type: "GET",
+            url: "/Notes/Details/" + identiefer,
+            data: { id: identiefer},
+            success: function (data) {
+                alert("success");
+                $("#dvCategoryResults").html(data);
+            },
+            error: function (ex) {
+                alert("Something went wrong in controller.");
+            }
+        });
+    });
+</script> 
